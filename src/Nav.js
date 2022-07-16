@@ -39,7 +39,7 @@ function Nav(parent) {
               {
                 <Todo
                   changeLogo={() => {
-                    parent.test();
+                    parent.updateLogo();
                   }}
                 />
               }
