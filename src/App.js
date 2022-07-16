@@ -14,7 +14,7 @@ function App() {
     <>
       <Nav
         newLogo={logo}
-        test={() => {
+        updateLogo={() => {
           update();
         }}
       />
