@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AboutMe from "./AboutMe";
 import CharactersList from "./CharactersList";
 import Todo from "./Todo";
 import Contact from "./Contact";
 
-function Nav({ newLogo }) {
+function Nav(parent) {
   const [choice, setChoice] = useState(null);
 
   const arr = ["About Me", "Characters list", "Todo", "Contact"];
@@ -15,7 +15,7 @@ function Nav({ newLogo }) {
 
   return (
     <>
-      <div className="logo">{newLogo}</div>
+      <div className="logo">{parent.newLogo}</div>
       <div className="nav-div">
         <div className="nav-buttons">
           {arr.map((text) => {
@@ -34,7 +34,17 @@ function Nav({ newLogo }) {
           {choice === arr[1] && (
             <div className="characters-list">{<CharactersList />}</div>
           )}
-          {choice === arr[2] && <div className="todo">{<Todo />}</div>}
+          {choice === arr[2] && (
+            <div className="todo">
+              {
+                <Todo
+                  changeLogo={() => {
+                    parent.test();
+                  }}
+                />
+              }
+            </div>
+          )}
           {choice === arr[3] && <div className="contact">{<Contact />}</div>}
         </div>
       </div>

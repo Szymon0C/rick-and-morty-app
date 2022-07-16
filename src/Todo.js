@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Todo() {
+function Todo(props) {
   let id = -1;
   const [element, setElement] = useState(null);
   const [list, setList] = useState([]);
@@ -27,7 +27,13 @@ function Todo() {
           );
         })}
       </ul>
-      <button onClick={() => {}}>Change logo</button>
+      <button
+        onClick={() => {
+          props.changeLogo();
+        }}
+      >
+        Change logo
+      </button>
     </>
   );
 }
