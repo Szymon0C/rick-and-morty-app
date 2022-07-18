@@ -1,21 +1,20 @@
+import { useState } from "react";
 import Nav from "./Nav";
 import "./App.css";
-import { useState } from "react";
+
 function App() {
   const [logo, setLogo] = useState("LOGO");
   const update = () => {
-    if (logo == "LOGO") {
-      setLogo("NEW LOGO");
-    } else {
-      setLogo("LOGO");
-    }
+    setLogo(logo === "LOGO" ? "NEW LOGO" : "LOGO");
   };
+
   return (
     <>
       <Nav
         newLogo={logo}
-        updateLogo={() => {
-          update();
+        updateLogo={() => update()}
+        setNewLogo={(value) => {
+          setLogo(value);
         }}
       />
     </>

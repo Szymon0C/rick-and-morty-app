@@ -15,7 +15,7 @@ function Todo(props) {
 
   return (
     <>
-      <input onChange={(e) => setElement(e.target.value)}></input>
+      <input onChange={(e) => setElement(e.target.value)} />
       <button onClick={update}>Accept</button>
       <ul>
         {list.map((element) => {

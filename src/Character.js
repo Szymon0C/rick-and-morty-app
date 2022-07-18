@@ -9,7 +9,7 @@ function Character({ link }) {
     imgSrc: null,
   });
   useEffect(() => {
-    let data = fetch(link)
+    fetch(link)
       .then((res) => res.json())
       .then((res) => {
         if (res) {

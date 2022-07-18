@@ -1,9 +1,5 @@
 import Form from "./ContactComponents/Form";
 function Contact() {
-  return (
-    <>
-      <Form />
-    </>
-  );
+  return <Form />;
 }
 export default Contact;
