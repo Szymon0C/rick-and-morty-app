@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Paragraph from "../Paragraph";
+import * as S from "../style";
 function Form() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -12,19 +13,19 @@ function Form() {
       <form>
         <Paragraph content="Sign in" />
         <Paragraph content="Fill in the fields below to sign into your account" />
-        <input
+        <S.Input
           type="email"
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
+        <S.Input
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={saveUser} type="button">
+        <S.Button onClick={saveUser} type="button">
           Sign in
-        </button>
+        </S.Button>
         <div>
           <Paragraph content="Don't have an account, yet? Sign up here!" />
         </div>

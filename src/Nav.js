@@ -3,11 +3,18 @@ import AboutMe from "./AboutMe";
 import CharactersList from "./CharactersList";
 import Todo from "./Todo";
 import Contact from "./Contact";
-
+import * as S from "./style";
 function Nav(parent) {
   const [choice, setChoice] = useState(null);
 
-  const ARR = ["About Me", "Characters list", "Todo", "Contact"];
+  const ARR = [
+    "About Me",
+    "Characters list",
+    "Todo",
+    "Contact",
+    "Dialog",
+    "Components",
+  ];
 
   const choosenButton = (e) => {
     setChoice(e.target.innerHTML);
@@ -16,7 +23,7 @@ function Nav(parent) {
   function showComponents() {
     if (choice === ARR[0]) {
       return (
-        <div className="about-me-div">
+        <S.AboutMe>
           {
             <AboutMe
               setNewLogo={(value) => {
@@ -24,7 +31,7 @@ function Nav(parent) {
               }}
             />
           }
-        </div>
+        </S.AboutMe>
       );
     } else if (choice === ARR[1]) {
       return <div className="characters-list">{<CharactersList />}</div>;
@@ -46,20 +53,20 @@ function Nav(parent) {
   }
   return (
     <>
-      <div className="logo">{parent.newLogo}</div>
-      <div className="nav-div">
-        <div className="nav-buttons">
+      <S.Logo>{parent.newLogo}</S.Logo>
+      <S.NavDiv>
+        <S.NavDivButtons>
           {ARR.map((text) => {
             return (
-              <button onClick={choosenButton} key={text}>
+              <S.Button onClick={choosenButton} key={text}>
                 {text}
-              </button>
+              </S.Button>
             );
           })}
-        </div>
+        </S.NavDivButtons>
 
-        <div className="subpage">{showComponents()}</div>
-      </div>
+        <S.SubPage>{showComponents()}</S.SubPage>
+      </S.NavDiv>
     </>
   );
 }

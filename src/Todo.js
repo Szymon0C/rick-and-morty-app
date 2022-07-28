@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import * as S from "./style";
 function Todo(props) {
   let id = -1;
   const [element, setElement] = useState(null);
@@ -15,8 +15,8 @@ function Todo(props) {
 
   return (
     <>
-      <input onChange={(e) => setElement(e.target.value)} />
-      <button onClick={update}>Accept</button>
+      <S.Input onChange={(e) => setElement(e.target.value)} />
+      <S.Button onClick={update}>Accept</S.Button>
       <ul>
         {list.map((element) => {
           id++;
@@ -27,13 +27,13 @@ function Todo(props) {
           );
         })}
       </ul>
-      <button
+      <S.Button
         onClick={() => {
           props.changeLogo();
         }}
       >
         Change logo
-      </button>
+      </S.Button>
     </>
   );
 }

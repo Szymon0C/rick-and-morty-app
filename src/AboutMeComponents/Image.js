@@ -1,8 +1,9 @@
 import image from "./imgs/me.png";
+import * as S from "../style";
 function Image() {
   return (
     <div>
-      <img src={image} alt="me.png" />
+      <S.Image src={image} alt="me.png" />
     </div>
   );
 }

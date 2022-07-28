@@ -6,31 +6,31 @@ body {
   font-family: "Roboto", sans-serif;
   color: #05386b;
 }
-input {
+/* input {
   height: 35px;
   border-radius: 5px;
   border: 1px solid #05386b;
   background-color: #8ee4af;
-}
-button {
+} */
+/* button {
   border-radius: 5px;
   margin-left: 10px;
   height: 40px;
   width: 90px;
-}
-.logo {
+} */
+/* .logo {
   position: absolute;
   top: 25px;
   left: 20px;
-}
-.nav-div {
+} */
+/* .nav-div {
   height: 70px;
   display: flex;
   flex-direction: column;
   background-color: #379683;
   border-radius: 5px;
-}
-.nav-div button {
+} */
+/* .nav-div button {
   border: 0;
   height: 40px;
   background-color: #379683;
@@ -39,32 +39,32 @@ button {
   font-weight: 700;
   margin-right: 60px;
   margin-top: 15px;
-}
-.nav-buttons {
+} */
+/* .nav-buttons {
   margin-left: 450px;
-}
-
+} */
+/* 
 .subpage {
   margin-top: 90px;
   margin-left: 40px;
-}
-
+} */
+/* 
 .about-me-div {
   display: flex;
-}
-.about-me-div div {
+} */
+/* .about-me-div div {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.about-me-div img {
+} */
+/* .about-me-div img {
   border-radius: 5px;
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
   width: 450px;
   height: 380px;
-}
+} */
 .about-me-div p {
   margin-left: 20px;
   margin-top: 20px;
