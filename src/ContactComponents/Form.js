@@ -13,12 +13,12 @@ function Form() {
       <form>
         <Paragraph content="Sign in" />
         <Paragraph content="Fill in the fields below to sign into your account" />
-        <S.Input
+        <S.ContactInput
           type="email"
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <S.Input
+        <S.ContactInput
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -31,14 +31,14 @@ function Form() {
         </div>
       </form>
       {user && (
-        <div className="results">
-          <div className="email-div">
+        <S.ContactResults>
+          <div>
             <Paragraph content={"email:" + user.email} />
           </div>
-          <div className="password-div">
+          <div>
             <Paragraph content={"password:" + user.password} />
           </div>
-        </div>
+        </S.ContactResults>
       )}
     </>
   );

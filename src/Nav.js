@@ -3,6 +3,9 @@ import AboutMe from "./AboutMe";
 import CharactersList from "./CharactersList";
 import Todo from "./Todo";
 import Contact from "./Contact";
+import Footer from "./Footer";
+import DialogComponent from "./Dialog";
+import Components from "./Components";
 import * as S from "./style";
 function Nav(parent) {
   const [choice, setChoice] = useState(null);
@@ -34,10 +37,10 @@ function Nav(parent) {
         </S.AboutMe>
       );
     } else if (choice === ARR[1]) {
-      return <div className="characters-list">{<CharactersList />}</div>;
+      return <div>{<CharactersList />}</div>;
     } else if (choice === ARR[2]) {
       return (
-        <div className="todo">
+        <div>
           {
             <Todo
               changeLogo={() => {
@@ -48,7 +51,11 @@ function Nav(parent) {
         </div>
       );
     } else if (choice === ARR[3]) {
-      return <div className="contact">{<Contact />}</div>;
+      return <div>{<Contact />}</div>;
+    } else if (choice === ARR[4]) {
+      return <DialogComponent />;
+    } else if (choice === ARR[5]) {
+      return <Components />;
     }
   }
   return (
@@ -67,6 +74,7 @@ function Nav(parent) {
 
         <S.SubPage>{showComponents()}</S.SubPage>
       </S.NavDiv>
+      <Footer />
     </>
   );
 }
