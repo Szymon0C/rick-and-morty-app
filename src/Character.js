@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Paragraph from "../src/Paragraph";
+import * as S from "./style";
 function Character({ link }) {
   let [character, setCharacter] = useState({
     name: null,
@@ -25,15 +26,15 @@ function Character({ link }) {
   }, []);
 
   return (
-    <div className="character">
-      <img src={character.imgSrc} alt="jpg" />
-      <div className="character-paragrahps">
+    <S.CharacterWrapper>
+      <S.StyledImg src={character.imgSrc} alt="jpg" />
+      <S.CharacterInfo>
         <Paragraph content={`name:${character.name}`} />
         <Paragraph content={`gender:${character.gender}`} />
         <Paragraph content={`species:${character.species}`} />
         <Paragraph content={`status:${character.status}`} />
-      </div>
-    </div>
+      </S.CharacterInfo>
+    </S.CharacterWrapper>
   );
 }
 export default Character;

@@ -1,4 +1,5 @@
+import * as S from "./style";
 function Paragraph({ content }) {
-  return <p>{content}</p>;
+  return <S.Paragraph>{content}</S.Paragraph>;
 }
 export default Paragraph;
