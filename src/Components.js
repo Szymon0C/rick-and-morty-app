@@ -1,12 +1,15 @@
-import * as React from "react";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import { ThemeProvider, createTheme } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Stack,
+  Button,
+  Box,
+  Slider,
+  FormGroup,
+  FormControlLabel,
+  Switch,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 
 import * as S from "./style";
 const theme = createTheme({
@@ -15,7 +18,7 @@ const theme = createTheme({
   },
 });
 export default function Components() {
-  const [label, setLabel] = React.useState("Light");
+  const [label, setLabel] = useState("Light");
   const changeTheme = () => {
     if (label === "Light") {
       setLabel("Dark");
