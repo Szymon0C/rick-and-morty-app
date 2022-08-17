@@ -1,22 +1,26 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Paragraph from "./Paragraph";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  InputLabel,
+  OutlinedInput,
+  MenuItem,
+  FormControl,
+  Select,
+} from "@mui/material";
 
 export default function DialogComponent() {
-  const [accept, setAccept] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [technology, setTechnology] = React.useState("");
-  const [level, setLevel] = React.useState("");
+  const [accept, setAccept] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [technology, setTechnology] = useState("");
+  const [level, setLevel] = useState("");
+  const LEVELS = ["Junior", "Mid", "Senior"];
+  const TECHNOLOGY = ["HTML", "Css", "JavaScript", "React"];
   const handleChangeTechnology = (event) => {
     setTechnology(String(event.target.value) || "");
   };
@@ -58,10 +62,9 @@ export default function DialogComponent() {
                 }
               >
                 <option aria-label="None" value="" />
-                <option value={"HTML"}>HTML</option>
-                <option value={"Css"}>Css</option>
-                <option value={"JavaScript"}>JavaScript</option>
-                <option value={"React"}>React</option>
+                {TECHNOLOGY.map((technology) => {
+                  return <option value={technology}>{technology}</option>;
+                })}
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -76,9 +79,9 @@ export default function DialogComponent() {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={"Junior"}>Junior</MenuItem>
-                <MenuItem value={"Mid"}>Mid</MenuItem>
-                <MenuItem value={"Senior"}>Senior</MenuItem>
+                {LEVELS.map((level) => {
+                  return <MenuItem value={level}>{level}</MenuItem>;
+                })}
               </Select>
             </FormControl>
           </Box>

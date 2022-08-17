@@ -6,7 +6,7 @@ function Form() {
   const [password, setPassword] = useState(null);
   const [user, setUser] = useState(null);
   const saveUser = () => {
-    setUser({ email: email, password: password });
+    setUser({ email, password });
   };
   return (
     <>

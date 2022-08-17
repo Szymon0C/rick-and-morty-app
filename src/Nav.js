@@ -29,8 +29,8 @@ function Nav(parent) {
         <S.AboutMe>
           {
             <AboutMe
-              setNewLogo={(value) => {
-                parent.setNewLogo(value);
+              setLogo={(value) => {
+                parent.setLogo(value);
               }}
             />
           }

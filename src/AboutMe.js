@@ -18,7 +18,7 @@ function AboutMe(props) {
       />
       <S.AboutMeButton
         onClick={() => {
-          props.setNewLogo(logo);
+          props.setLogo(logo);
         }}
       >
         Accept

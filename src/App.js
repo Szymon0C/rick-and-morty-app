@@ -10,13 +10,7 @@ function App() {
 
   return (
     <>
-      <Nav
-        newLogo={logo}
-        updateLogo={() => update()}
-        setNewLogo={(value) => {
-          setLogo(value);
-        }}
-      />
+      <Nav newLogo={logo} updateLogo={update} setLogo={setLogo} />
     </>
   );
 }

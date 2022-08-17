@@ -1,7 +1,7 @@
 import Switch from "@mui/material/Switch";
 import { style } from "@mui/system";
+import styled from "styled-components";
 
-const { default: styled } = require("styled-components");
 const FlexDiv = styled.div`
   display: flex;
 `;
