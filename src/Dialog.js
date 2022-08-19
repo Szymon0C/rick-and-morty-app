@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import Paragraph from "./Paragraph";
 import {
   Box,
@@ -14,6 +15,8 @@ import {
   Select,
 } from "@mui/material";
 
+import { SloganContext } from "./contexts/SloganContext";
+
 export default function DialogComponent() {
   const [accept, setAccept] = useState(false);
   const [open, setOpen] = useState(false);
@@ -21,6 +24,9 @@ export default function DialogComponent() {
   const [level, setLevel] = useState("");
   const LEVELS = ["Junior", "Mid", "Senior"];
   const TECHNOLOGY = ["HTML", "Css", "JavaScript", "React"];
+
+  const { slogan } = useContext(SloganContext);
+
   const handleChangeTechnology = (event) => {
     setTechnology(String(event.target.value) || "");
   };
@@ -30,7 +36,6 @@ export default function DialogComponent() {
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = (event, reason) => {
     if (reason !== "backdropClick") {
       setOpen(false);
@@ -92,7 +97,9 @@ export default function DialogComponent() {
         </DialogActions>
       </Dialog>
       {technology && level && accept && (
-        <Paragraph content={`Technology:${technology}, level:${level}`} />
+        <Paragraph
+          content={`Technology:${technology}, level:${level} \n ${slogan}`}
+        />
       )}
     </div>
   );
