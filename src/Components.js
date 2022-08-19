@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import {
   Stack,
   Button,
@@ -12,20 +13,18 @@ import {
 } from "@mui/material";
 
 import * as S from "./style";
+
+import { MyThemeContext } from "./contexts/MyThemeContext";
+
 const theme = createTheme({
   palette: {
     primary: { main: "#ffeb3b" },
   },
 });
+
 export default function Components() {
-  const [label, setLabel] = useState("Light");
-  const changeTheme = () => {
-    if (label === "Light") {
-      setLabel("Dark");
-    } else {
-      setLabel("Light");
-    }
-  };
+  const { myTheme, changeMyTheme } = useContext(MyThemeContext);
+
   return (
     <>
       <Box width={300}>
@@ -46,8 +45,8 @@ export default function Components() {
         />{" "}
         <FormGroup>
           <FormControlLabel
-            control={<S.StyledSwitch defaultChecked onChange={changeTheme} />}
-            label={label}
+            control={<S.StyledSwitch defaultChecked onChange={changeMyTheme} />}
+            label={myTheme}
           />
         </FormGroup>
       </Box>
